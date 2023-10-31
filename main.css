@@ -1,0 +1,19 @@
+.class{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blue;
+
+
+}
+
+#Hogwarts{
+background-color: aquamarine;
+display: block;
+flex-direction: column;
+}
+
+#Moldy{
+background-color: brown;
+display: block;
+flex-direction: column;
+}
