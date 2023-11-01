@@ -18,7 +18,7 @@ for(pet of pets){
     <button type="button" id="delete--${pet.id}" class="btn btn-danger">Delete</button>
   </div>
   </div>`
-
+}
 
 //const sortShowCards = document.getElementById("sortShowCards";)
 //const card = document.getElementById("#card");
@@ -37,4 +37,4 @@ const card = document.getElementById("card")
     card.style.display = "block";
   } else {
     card.style.display = "none";
-  }
+  }*/
