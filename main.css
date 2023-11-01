@@ -1,7 +1,13 @@
-.class{
+#container{
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  background-color: blue;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+
+ 
+  
 
 
 }
@@ -9,11 +15,39 @@
 #Hogwarts{
 background-color: aquamarine;
 display: block;
-flex-direction: column;
+justify-content: left;
+
+
+
 }
 
 #Moldy{
 background-color: brown;
-display: block;
-flex-direction: column;
+justify-content: right;
+
+}
+
+.cardImage {
+  width: 300px;
+  height: 300px;
+}
+
+.houseFilters{
+display: flex;
+justify-content: space-evenly;
+}
+
+
+#cont1{
+
+margin-right: 20px;
+border: solid 5px;
+background-color: orange;
+}
+
+#cont2{
+margin-left: 50px;
+border: solid 5px;
+background-color: yellow;
+
 }
