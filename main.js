@@ -1,5 +1,48 @@
+const students = [
+  {
+    id: 1,
+    imageUrl: "",
+    name: ,
+    house: ,
+    expelled: ,
+  }, 
+  {
+    id: 1,
+    imageUrl: "",
+    name: ,
+    house: ,
+    expelled: ,
+  }, 
+  {
+    id: 1,
+    imageUrl: "",
+    name: ,
+    house: ,
+    expelled: ,
+  }, 
+]
 
-const sortShowCards = document.getElementById("#sortBtn";)
+const app.innerHTML = domString1
+const app2.innerHTNL = domString2
+
+students.forEach(student) => {
+  function myFunction(item) {
+    domString1 += 
+    `<div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+    <img src=${students.imageUrl} class="img" alt=${students.id}>
+      <h5 class="card-title">${students.name}</h5>
+      <p class="card-text">${student.house}</p>
+      <a href="#" class="btn btn-primary">Expel</a>
+    </div>
+  </div>`
+  }
+}
+
+/*const sortShowCards = document.getElementById("#sortBtn";)
 const card = document.getElementById("#card");
 const removeEnterButton = document.getElementById("removeEnterButton");
 const card = document.getElementById("card")
