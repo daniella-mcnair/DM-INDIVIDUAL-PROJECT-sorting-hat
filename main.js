@@ -1,31 +1,17 @@
 const students = [
   {
     id: 1,
-    imageUrl: "",
-    name: ,
-    house: ,
-    expelled: ,
-  }, 
-  {
-    id: 1,
-    imageUrl: "",
-    name: ,
-    house: ,
-    expelled: ,
-  }, 
-  {
-    id: 1,
-    imageUrl: "",
-    name: ,
-    house: ,
-    expelled: ,
-  }, 
+    imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+    name: "Allie",
+    house: "Griffndor",
+  }
 ]
 
-const app.innerHTML = domString1
-const app2.innerHTNL = domString2
+const renderToDom = (students) =>{
 
-students.forEach(student) => {
+  let domString1 = ""
+
+students.forEach((student) => {
   function myFunction(item) {
     domString1 += 
     `<div class="card">
@@ -39,7 +25,18 @@ students.forEach(student) => {
       <a href="#" class="btn btn-primary">Expel</a>
     </div>
   </div>`
-  }
+  });
+
+const app.innerHTML = domString1;
+const app2.innerHTNL = domString2;
+
+//Button variables//
+const sortingButton = document.querySelector("#sortButton");
+
+sortingButton.addEventListener("click", sortStudent);
+//event functions//
+function sortStudent (event) {
+  console.log('do u work or nah?');
 }
 
 /*const sortShowCards = document.getElementById("#sortBtn";)
