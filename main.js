@@ -1,4 +1,14 @@
 
+const sortShowCards = document.getElementById("#sortBtn";)
+const card = document.getElementById("#card");
+const removeEnterButton = document.getElementById("removeEnterButton");
+const card = document.getElementById("card")
+
+sortShowCards.addEventListener("click", function()) {
+  if (card.style.display === "none") {
+    card.style.display = "block";
+  } else {
+    card.style.display = "none";
 
 
 let domString = ""
@@ -20,10 +30,6 @@ for(pet of pets){
   </div>`
 }
 
-//const sortShowCards = document.getElementById("sortShowCards";)
-//const card = document.getElementById("#card");
-/*const removeEnterButton = document.getElementById("removeEnterButton");
-const card = document.getElementById("card")
 
 
 
@@ -32,9 +38,5 @@ const card = document.getElementById("card")
 
 //or let removeHome = document.getElementById("class or id name")
 //})
-/*sortShowCards.addEventListener("click", function()) {
-  if (card.style.display === "none") {
-    card.style.display = "block";
-  } else {
-    card.style.display = "none";
+
   }*/
