@@ -8,3 +8,6 @@ Putting it all together - Iterating with Bootstrap: https://nss-evening-curricul
 https://nss-evening-curriculum.netlify.app/client/notes-06-functions-events
 https://nss-evening-curriculum.netlify.app/client/notes-07-create-delete
 cope info and exercises: https://nss-evening-curriculum.netlify.app/client/js-scope
+
+
+help
