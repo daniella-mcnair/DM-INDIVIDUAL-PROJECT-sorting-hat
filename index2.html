@@ -9,8 +9,7 @@
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-  <script src="main.js"></script>
+
 
   <div class="text">
     <h1>Welcome to Hoggy Hog Warts, RELOADED</h1>
@@ -24,12 +23,12 @@
     <h2>Enter First Year's Name</h2>
   </div>
 
-<div id ="Form">
-  <form>
+<div id>
+  <form id= "studentNameForm">
     <div class="mb-3">
-      <label for="exampleStudentName" class="form-label">Student:</label>
+      <label for="studentName" class="form-label">Student:</label>
       <!--Need student: text before form!-->
-      <input type="text" class="form-control" id="studentName" aria-describedby="name">
+      <input type="text" class="form-control" id="studentName" aria-describedby="name" required>
       <button type="submit" id="sortButton">Sort</button>
     </div>
       </div>
@@ -55,7 +54,7 @@
   <div id="container">
     <div id="cont1">
       <div><h1>First Year's</h1></div>
-      
+      <div id= "studentCards"></div>
     </div>
       
     <div id="cont2">
@@ -64,12 +63,8 @@
       </div>
 
 
-  <!-- <div id="wrapper">
-    <div id="box">
-     
-    </div>
-  </div> -->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>

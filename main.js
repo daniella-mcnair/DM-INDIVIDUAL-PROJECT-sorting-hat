@@ -1,9 +1,19 @@
-const students = [
+const studentNameForm = document.querySelector("#studentNameForm");
+const studentCards = document.querySelector("#studentCards");
+
+studentNameForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  
+  const inputStudentName = document.querySelector("#studentName");
+  const studentName = inputStudentName.ariaValueMax;
+});
+
+/*const students = [
   {
     id: 1,
     imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
     name: "Allie",
-    house: "Griffndor",
+    house: "Gryffindor",
   }
 ]
 
@@ -12,7 +22,6 @@ const renderToDom = (students) =>{
   let domString1 = ""
 
 students.forEach((student) => {
-  function myFunction(item) {
     domString1 += 
     `<div class="card">
     <div class="card-header">
@@ -27,8 +36,10 @@ students.forEach((student) => {
   </div>`
   });
 
-const app.innerHTML = domString1;
-const app2.innerHTNL = domString2;
+  const app = document.querySelector("#all");
+  app.innerHTML = domstring1;
+
+
 
 //Button variables//
 const sortingButton = document.querySelector("#sortButton");
@@ -79,4 +90,4 @@ for(pet of pets){
 //or let removeHome = document.getElementById("class or id name")
 //})
 
-  }*/
+  */
