@@ -3,22 +3,6 @@ body{
 }
 
 
-
-#Hogwarts{
-background-color: aquamarine;
-display: block;
-justify-content: left;
-
-
-
-}
-
-#Moldy{
-background-color: brown;
-justify-content: right;
-
-}
-
 .cardImage {
   width: 300px;
   height: 300px;
@@ -40,20 +24,22 @@ justify-content: space-evenly;
 }
 
 #cont1{
-margin-top: 25px;
-margin-right: 20px;
+padding: 25px 25px 25px 25px;
+margin: 35px 0px 20px 0px;
 border: solid 5px;
-background-color: orange;
+border: 1px solid grey;
 }
 
 #cont2{
-  margin-top: 25px;
-margin-left: 50px;
+padding: 25px 25px 25px 25px;
+margin: 35px 0px 20px 0px;
 border: solid 5px;
-background-color: yellow;
+
+border: 1px solid grey;
 
 }
 
 .formContainer{
   background-color: white;
+  
 }
