@@ -38,13 +38,15 @@ const app = document.querySelector("#app")
   app.innerHTML = domString;
 
 }*/
+//form create student
 
 
 
 
 const sortButton = document.querySelector("#sortButton")
 
-sortButton.addEventListener("click", renderToDom)
+sortButton.addEventListener("click",renderToDom)
+sortButton.addEventListener("click",addStudent)
 
 function renderToDom () {
   let domString = ""
@@ -56,8 +58,8 @@ function renderToDom () {
       </div>
       <div class="card-body">
       <img src=${student.imageUrl} class="img" alt=${student.id}>
-        <h5 class="card-title">${student.name}</h5>
-        <p class="card-text">${student.house}</p>
+        <h5 class="student-name">${student.name}</h5>
+        <p class="student-house">${student.house}</p>
         <a href="#" class="btn btn-primary">Expel</a>
       </div>
     </div>`
@@ -66,4 +68,27 @@ function renderToDom () {
   }
 
 app.innerHTML = domString;
+
+
+}
+
+function addStudent () {
+const nameInput = document.querySelector(".student-name");
+const houseInput = document.querySelector(".student-house");
+
+const newName = nameInput.value;
+const newHouse = houseInput.value;
+
+const newStudent ={
+  id: students.length + 1,
+  imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+  name: newName,
+  house: newHouse,
+};
+students.push(newStudent);
+renderToDom();
+nameInput.value = "";
+houseInput.value = "";
+
+
 }
