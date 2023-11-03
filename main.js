@@ -58,8 +58,8 @@ function renderToDom () {
       </div>
       <div class="card-body">
       <img src=${student.imageUrl} class="img" alt=${student.id}>
-        <h5 class="student-name">${student.name}</h5>
-        <p class="student-house">${student.house}</p>
+        <h5 id="studentName">${student.name}</h5>
+        <p id="studentHouse">${student.house}</p>
         <a href="#" class="btn btn-primary">Expel</a>
       </div>
     </div>`
@@ -73,8 +73,8 @@ app.innerHTML = domString;
 }
 
 function addStudent () {
-const nameInput = document.querySelector(".student-name");
-const houseInput = document.querySelector(".student-house");
+const nameInput = document.getElementById("studentName");
+const houseInput = document.getElementById("studentHouse");
 
 const newName = nameInput.value;
 const newHouse = houseInput.value;
