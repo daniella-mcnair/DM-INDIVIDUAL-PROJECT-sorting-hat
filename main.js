@@ -51,7 +51,7 @@ sortButton.addEventListener("click",addStudent)
 function renderToDom () {
   let domString = ""
   // Loop over the array and create our pie cards
-  for(student of students){
+  students.forEach((student) => {
       domString += `<div class="card">
       <div class="card-header">
         Featured
@@ -63,14 +63,12 @@ function renderToDom () {
         <a href="#" class="btn btn-primary">Expel</a>
       </div>
     </div>`
-
-    console.log("ughh")
-  }
+  });
 
 app.innerHTML = domString;
 
 
-}
+};
 
 function addStudent () {
 const nameInput = document.getElementById("studentName");
