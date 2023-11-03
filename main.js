@@ -12,41 +12,30 @@ const students = [
     house: "Slytherin",
   }
 ]
+
+const exStudents = [
+  {
+    id: 1,
+    imageUrl: "https://images.unsplash.com/photo-1577764508125-32846c1428e9?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNsb3dufGVufDB8fDB8fHww",
+    name: "Allie",
+    house: "Gryffindor",
+  },
+]
+
+
+
 const app = document.querySelector("#app")
-
-
- /* const renderToDom () {
-  // Create our domstring so we can push our cards to it
-  let domString = ""
-  // Loop over the array and create our pie cards
-  for(student of students){
-      domString += `<div class="card">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-body">
-      <img src=${students.imageUrl} class="img" alt=${students.id}>
-        <h5 class="card-title">${students.name}</h5>
-        <p class="card-text">${student.house}</p>
-        <a href="#" class="btn btn-primary">Expel</a>
-      </div>
-    </div>`
-
-    console.log("ughh")
-  }
-
-  app.innerHTML = domString;
-
-}*/
-//form create student
+const app2 = document.querySelector("#app2")
 
 
 
 
-const sortButton = document.querySelector("#sortButton")
+const sortButton = document.querySelector("#sortButton");
+
 
 sortButton.addEventListener("click",renderToDom)
 sortButton.addEventListener("click",addStudent)
+
 
 function renderToDom () {
   let domString = ""
@@ -60,7 +49,7 @@ function renderToDom () {
       <img src=${student.imageUrl} class="img" alt=${student.id}>
         <h5 id="studentName">${student.name}</h5>
         <p id="studentHouse">${student.house}</p>
-        <a href="#" class="btn btn-primary">Expel</a>
+        <a href="#" class="btn btn-primary expelButton">Expel</a>
       </div>
     </div>`
   });
