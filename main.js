@@ -1,93 +1,88 @@
-const studentNameForm = document.querySelector("#studentNameForm");
-const studentCards = document.querySelector("#studentCards");
-
-studentNameForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  
-  const inputStudentName = document.querySelector("#studentName");
-  const studentName = inputStudentName.ariaValueMax;
-});
-
-/*const students = [
+const students = [
   {
     id: 1,
-    imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1589859762194-eaae75c61f64?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8fDA%3D",
     name: "Allie",
     house: "Gryffindor",
+  }, 
+  {
+    id: 2,
+    imageUrl: "https://images.unsplash.com/photo-1505151771131-4fe946e1cf40?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIyfHxzb2xpZCUyMGNvbG9yfGVufDB8fDB8fHww",
+    name: "Jacob",
+    house: "Slytherin",
   }
 ]
 
-const renderToDom = (students) =>{
+const exStudents = [];
 
-  let domString1 = ""
 
-students.forEach((student) => {
-    domString1 += 
-    `<div class="card">
-    <div class="card-header">
-      Featured
-    </div>
-    <div class="card-body">
-    <img src=${students.imageUrl} class="img" alt=${students.id}>
-      <h5 class="card-title">${students.name}</h5>
-      <p class="card-text">${student.house}</p>
-      <a href="#" class="btn btn-primary">Expel</a>
-    </div>
-  </div>`
+const app = document.querySelector("#app")
+const app2 = document.querySelector("#app2")
+//const expelledStudents = document.querySelector("#expelledStudents")
+
+
+
+
+const sortButton = document.querySelector("#sortButton");
+//const expelButton = document.querySelector("#expelButton");
+
+//const Gryfffilter = documentQuerySelector("#gryf")
+
+
+sortButton.addEventListener("click",renderToDom);
+sortButton.addEventListener("click",addStudent);
+//expelButton.addEventListener("click", expelStudent);
+
+
+function renderToDom () {
+  let domString = ""
+  // Loop over the array and create our pie cards
+  students.forEach((student) => {
+      domString += `<div class="card">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+      <img src=${student.imageUrl} class="img" alt=${student.id}>
+        <h5 id="studentName">${student.name}</h5>
+        <p id="studentHouse">${student.house}</p>
+        <a href="#" class="btn btn-primary" id="expelButton">Expel</a>
+      </div>
+    </div>`
   });
 
-  const app = document.querySelector("#all");
-  app.innerHTML = domstring1;
+app.innerHTML = domString;
 
 
+};
 
-//Button variables//
-const sortingButton = document.querySelector("#sortButton");
+function addStudent () {
+const nameInput = document.getElementById("studentName");
+const houseInput = document.getElementById("studentHouse");
 
-sortingButton.addEventListener("click", sortStudent);
-//event functions//
-function sortStudent (event) {
-  console.log('do u work or nah?');
+const newName = nameInput.value;
+const newHouse = houseInput.value;
+
+const newStudent ={
+  id: students.length + 1,
+  imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+  name: newName,
+  house: newHouse,
+};
+students.push(newStudent);
+renderToDom();
+nameInput.value = "";
+houseInput.value = "";
+
+
 }
 
-/*const sortShowCards = document.getElementById("#sortBtn";)
-const card = document.getElementById("#card");
-const removeEnterButton = document.getElementById("removeEnterButton");
-const card = document.getElementById("card")
-
-sortShowCards.addEventListener("click", function()) {
-  if (card.style.display === "none") {
-    card.style.display = "block";
-  } else {
-    card.style.display = "none";
-
-
-let domString = ""
-// Loop over the array and create our pie cards
-for(pet of pets){
-    domString += `
-
-    <div class="card" style="max-width: 18rem;">
-    <div class="card-header">${pet.name}</div>
-    <img src=${pet.imageUrl} class="img" alt=${pet.id}>
-    <div class="card-body">
-    
-      <h5 class="card-title">${pet.color}</h5>
-      <p class="card-text">${pet.specialSkill}</p>
-    </div>
-    <div class="card-footer">${pet.type}</div>
-    <button type="button" id="delete--${pet.id}" class="btn btn-danger">Delete</button>
-  </div>
-  </div>`
-}
-
-
-
-
-//removeEnterButton.addEventListener("click", function () => {
-  let removeEnter = document.getElementById("#removeEnterButton");
-
-//or let removeHome = document.getElementById("class or id name")
-//})
-
-  */
+/*
+const filter () => {
+  let itsGryff = []
+    for (student of students){
+      student.house ==
+    }
+}*/
+   
+  

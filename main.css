@@ -45,3 +45,26 @@ border: 1px solid grey;
   
   
 }
+
+img{
+  height: 200px;
+  width: 200px;
+}
+
+.enterCard {
+  padding-top: 25px;
+  width: 800px;;
+}
+
+.card{
+  display: inline;
+}
+
+.imgEnter{
+width: 200px;
+height: 200px;
+}
+
+cardEnter{
+  justify-content: center;
+}
