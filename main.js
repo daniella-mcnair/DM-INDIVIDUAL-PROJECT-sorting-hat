@@ -13,28 +13,23 @@ const students = [
   }
 ]
 
-const exStudents = [
-  {
-    id: 1,
-    imageUrl: "https://images.unsplash.com/photo-1577764508125-32846c1428e9?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGNsb3dufGVufDB8fDB8fHww",
-    name: "Allie",
-    house: "Gryffindor",
-  },
-]
-
+const exStudents = [];
 
 
 const app = document.querySelector("#app")
 const app2 = document.querySelector("#app2")
+const expelledStudents = document.querySelector("#expelledStudents")
 
 
 
 
 const sortButton = document.querySelector("#sortButton");
+const expelButton = document.querySelector("#expelButton");
 
 
-sortButton.addEventListener("click",renderToDom)
-sortButton.addEventListener("click",addStudent)
+sortButton.addEventListener("click",renderToDom);
+sortButton.addEventListener("click",addStudent);
+expelButton.addEventListener("click", expelStudent);
 
 
 function renderToDom () {
@@ -49,7 +44,7 @@ function renderToDom () {
       <img src=${student.imageUrl} class="img" alt=${student.id}>
         <h5 id="studentName">${student.name}</h5>
         <p id="studentHouse">${student.house}</p>
-        <a href="#" class="btn btn-primary expelButton">Expel</a>
+        <a href="#" class="btn btn-primary" id="expelButton">Expel</a>
       </div>
     </div>`
   });
@@ -79,3 +74,31 @@ houseInput.value = "";
 
 
 }
+
+function expelStudent (event){
+  const studentId = parseInt(event.target.getAttribute("data-id"), 10);
+
+  const expelledStudent =students.find((student) => student.id === studentId);
+
+  if (expelledStudent) {
+    expelledStudents.push(expelledStudent);
+
+  students = students.filter((student) => student.id !== studentId);
+
+      const removeCard = event.target.closest(".card");
+      removeCard.remove();
+
+      app2.innerHTML += `<div class="card">
+      <div class="card-header">
+        Expelled
+      </div>
+      <div class="card-body">
+        <h5 id="studentName">${expelledStudent.name}</h5>
+        <p id="studentHouse">${expelledStudent.house}</p>
+        <p>sadly, ${expelledStudent.name} has joined the dark side.</p>
+      </div>
+    </div>`
+      };
+    
+    }
+  
