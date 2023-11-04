@@ -55,3 +55,16 @@ img{
   padding-top: 25px;
   width: 800px;;
 }
+
+.card{
+  display: inline;
+}
+
+.imgEnter{
+width: 200px;
+height: 200px;
+}
+
+cardEnter{
+  justify-content: center;
+}

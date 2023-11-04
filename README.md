@@ -1,3 +1,31 @@
+
+Name of the Project: Sorting Hat
+Overview of the project:
+Create a form that inputs a name and outputs a card with the inputted name and random Harry Potter house. Create the ability to expel students as well.
+
+Link to your wireframes/prototype:
+N/A
+
+Link/screenshot of data flowchart: 
+https://dbdiagram.io/d/SortingHat-6545aa077d8bbd646575e182
+
+Link to the deployed project:
+
+Link to your project board: N/A
+
+Description of the user and the problem you are solving for them:
+The user for my application is a Harry Potter fan that wants to enter a name and have it randomly assigned to one of the Harry Potter Houses.
+
+List of features:
+
+Screenshots of your project:
+
+List of contributors and links to their GH profiles: N/A
+
+Link to Loom video walkthrough of your app (no more than 1 minute long! Make it great): N/A
+
+
+Instructions for this Project
 # Sorting Hat
 
 ## Goals
@@ -54,4 +82,3 @@ Think of a way you can expel students without just hiding those divs on the page
 ## Optional Bonus
 - House Colors: The color of the student's card changes depending on which house they were sorted.
 - Card Sorting/Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
-

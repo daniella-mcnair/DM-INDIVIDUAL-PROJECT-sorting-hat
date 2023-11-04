@@ -1,13 +1,13 @@
 const students = [
   {
     id: 1,
-    imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1589859762194-eaae75c61f64?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8fDA%3D",
     name: "Allie",
     house: "Gryffindor",
   }, 
   {
     id: 2,
-    imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1505151771131-4fe946e1cf40?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIyfHxzb2xpZCUyMGNvbG9yfGVufDB8fDB8fHww",
     name: "Jacob",
     house: "Slytherin",
   }
@@ -18,18 +18,20 @@ const exStudents = [];
 
 const app = document.querySelector("#app")
 const app2 = document.querySelector("#app2")
-const expelledStudents = document.querySelector("#expelledStudents")
+//const expelledStudents = document.querySelector("#expelledStudents")
 
 
 
 
 const sortButton = document.querySelector("#sortButton");
-const expelButton = document.querySelector("#expelButton");
+//const expelButton = document.querySelector("#expelButton");
+
+//const Gryfffilter = documentQuerySelector("#gryf")
 
 
 sortButton.addEventListener("click",renderToDom);
 sortButton.addEventListener("click",addStudent);
-expelButton.addEventListener("click", expelStudent);
+//expelButton.addEventListener("click", expelStudent);
 
 
 function renderToDom () {
@@ -75,30 +77,12 @@ houseInput.value = "";
 
 }
 
-function expelStudent (event){
-  const studentId = parseInt(event.target.getAttribute("data-id"), 10);
-
-  const expelledStudent =students.find((student) => student.id === studentId);
-
-  if (expelledStudent) {
-    expelledStudents.push(expelledStudent);
-
-  students = students.filter((student) => student.id !== studentId);
-
-      const removeCard = event.target.closest(".card");
-      removeCard.remove();
-
-      app2.innerHTML += `<div class="card">
-      <div class="card-header">
-        Expelled
-      </div>
-      <div class="card-body">
-        <h5 id="studentName">${expelledStudent.name}</h5>
-        <p id="studentHouse">${expelledStudent.house}</p>
-        <p>sadly, ${expelledStudent.name} has joined the dark side.</p>
-      </div>
-    </div>`
-      };
-    
+/*
+const filter () => {
+  let itsGryff = []
+    for (student of students){
+      student.house ==
     }
+}*/
+   
   
