@@ -24,13 +24,13 @@ const expelledStudents = document.querySelector("#expelledStudents")
 
 
 const sortButton = document.querySelector("#sortButton");
-//const expelButton = document.querySelector("#expelButton");
+const expelButton = document.querySelector("#expelButton");
 
 
 
 sortButton.addEventListener("click",renderToDom);
 sortButton.addEventListener("click",addStudent);
-//expelButton.addEventListener("click", expelStudent);
+expelButton.addEventListener("click", expelStudent);
 
 
 function renderToDom () {
@@ -142,5 +142,17 @@ const filter () => {
   }*/
 
     
-//function expelStudent (event) {
-//}
+function expelStudent (event) {
+  const studentId = event.target.getAttribute("student.id");
+
+  const expelledStudentIndex = students.findIndex((student) => student.id === parseInt(studentId));
+
+  if (expelledStudentIndex !== -1) {
+ 
+    students.splice(expelledStudentIndex, 1);
+
+    renderToDom();
+    renderExpelledStudents();
+    console.log(renderExpelledStudents)
+  }
+}
