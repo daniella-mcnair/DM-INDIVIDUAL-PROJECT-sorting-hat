@@ -148,11 +148,11 @@ function expelStudent (event) {
   const expelledStudentIndex = students.findIndex((student) => student.id === parseInt(studentId));
 
   if (expelledStudentIndex !== -1) {
-    // Remove the student from the students array using the index
+ 
     students.splice(expelledStudentIndex, 1);
 
-    // Re-render the student cards and expelled students
     renderToDom();
     renderExpelledStudents();
+    console.log(renderExpelledStudents)
   }
 }
