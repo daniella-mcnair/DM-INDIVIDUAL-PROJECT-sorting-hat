@@ -142,7 +142,7 @@ const filter () => {
   }*/
 
     
-function expelStudent (event) {
+/*function expelStudent (event) {
   const studentId = event.target.getAttribute("student.id");
 
   const expelledStudentIndex = students.findIndex((student) => student.id === parseInt(studentId));
@@ -155,4 +155,4 @@ function expelStudent (event) {
     renderExpelledStudents();
     console.log(renderExpelledStudents)
   }
-}
+}*/
