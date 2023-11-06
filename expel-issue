@@ -1,0 +1,38 @@
+1. 
+<div id = firstCard>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary" id="enterButton">ENTER</a>
+  </div>
+</div>
+</div>
+
+<div id = "formApp"></div>
+-------------------------------
+<div id = firstCard>
+<div id = "renderForm"></div
+</div>
+
+in js
+
+const enterJs = document.querySelector("#enterButton")
+
+EnterJs.addEventListener ("click", renderForm)
+
+function renderForm () {
+
+let domstring = ""
+domstring += `
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+`
+formApp.innerHTML = domstring
