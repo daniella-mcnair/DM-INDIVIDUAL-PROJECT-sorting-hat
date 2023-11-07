@@ -1,15 +1,31 @@
+const students = [
+  {
+    id: 1,
+    imageUrl: "https://images.unsplash.com/photo-1589859762194-eaae75c61f64?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8fDA%3D",
+    name: "Allie",
+    house: "",
+  }, 
+  {
+    id: 2,
+    imageUrl: "https://images.unsplash.com/photo-1505151771131-4fe946e1cf40?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIyfHxzb2xpZCUyMGNvbG9yfGVufDB8fDB8fHww",
+    name: "Jacob",
+    house: "",
+  }
+]
+
 //This is the js variable to the html form
 const renderForm = document.querySelector("#showForm")
 //This is the js variable to the sort button on the html form
-const sortJsButton = document.querySelector ("#sortStudentButton")
 
-//This is the js variable to select the "Let's Go" button
+
+//This is the js variable to select the "Let's Go" button in html
 const showCardJS = document.querySelector("#showCard")
 
 
 
+
 showCardJS.addEventListener("click",renderForm2Dom)
-sortJsButton.addEventListener("click",sortStudents)
+
 
 function renderForm2Dom() {
   let domstring = "";
@@ -29,27 +45,36 @@ function renderForm2Dom() {
   `
 renderForm.innerHTML = domstring;
 
-  
+//The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
+const sortJsButton = document.querySelector ("#sortStudentButton")
+sortJsButton.addEventListener("click",sortStudents) 
+
+
 };
 
+
+
 function sortStudents() {
-  let domstring = "";
-  domstring += `
-  <div class="card" id = "HouseCard" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Enter First Year's Name:</h5>
-    <h3>Student:</h3>
+  let domString = ""
+  // Loop over the array and create our pie cards
+  students.forEach((student) => {
+      domString += `<div class="card">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+      <img src=${student.imageUrl} class="img" alt=${student.id}>
+        <h5 id="studentName">${student.name}</h5>
+        <p id="studentHouse">${student.house}</p>
+        <a href="#" class="btn btn-primary" id="expelButton">Expel</a>
+      </div>
+    </div>`
+  });
 
-    <!--FORM-->
+ 
 
-    <label for="inputPassword5" class="form-label"> </label>
-    <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-    <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
-  </div>
-</div>
-  `
-renderForm.innerHTML = domstring;
 
+app.innerHTML = domString;
   
 };
 
