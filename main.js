@@ -1,3 +1,60 @@
+//This is the js variable to the html form
+const renderForm = document.querySelector("#showForm")
+//This is the js variable to the sort button on the html form
+const sortJsButton = document.querySelector ("#sortStudentButton")
+
+//This is the js variable to select the "Let's Go" button
+const showCardJS = document.querySelector("#showCard")
+
+
+
+showCardJS.addEventListener("click",renderForm2Dom)
+sortJsButton.addEventListener("click",sortStudents)
+
+function renderForm2Dom() {
+  let domstring = "";
+  domstring += `
+  <div class="card" id = "HouseCard" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Enter First Year's Name:</h5>
+    <h3>Student:</h3>
+
+    <!--FORM-->
+
+    <label for="inputPassword5" class="form-label"> </label>
+    <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
+  </div>
+</div>
+  `
+renderForm.innerHTML = domstring;
+
+  
+};
+
+function sortStudents() {
+  let domstring = "";
+  domstring += `
+  <div class="card" id = "HouseCard" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Enter First Year's Name:</h5>
+    <h3>Student:</h3>
+
+    <!--FORM-->
+
+    <label for="inputPassword5" class="form-label"> </label>
+    <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
+  </div>
+</div>
+  `
+renderForm.innerHTML = domstring;
+
+  
+};
+
+/*
+ PREVIOUS CODE ////
 const students = [
   {
     id: 1,
@@ -142,7 +199,7 @@ const filter () => {
   }*/
 
     
-function expelStudent (event) {
+/*function expelStudent (event) {
   const studentId = event.target.getAttribute("student.id");
 
   const expelledStudentIndex = students.findIndex((student) => student.id === parseInt(studentId));
@@ -155,4 +212,14 @@ function expelStudent (event) {
     renderExpelledStudents();
     console.log(renderExpelledStudents)
   }
-}
+}*/
+
+
+
+//create divs for each box
+//put text etc in box
+//create card
+//you need an eventlistener to render form, function 
+//document.querySelector for the div id declare var in js
+//sortButton.addEventListener("click", expelStudent)
+//function to rendser fornm to dom {
