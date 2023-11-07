@@ -1,13 +1,13 @@
 const students = [
   {
     id: 1,
-    imageUrl: "https://images.unsplash.com/photo-1589859762194-eaae75c61f64?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNvbGlkJTIwY29sb3J8ZW58MHx8MHx8fDA%3D",
+    imageUrl: "",
     name: "Allie",
     house: "",
   }, 
   {
     id: 2,
-    imageUrl: "https://images.unsplash.com/photo-1505151771131-4fe946e1cf40?auto=format&fit=crop&q=60&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIyfHxzb2xpZCUyMGNvbG9yfGVufDB8fDB8fHww",
+    imageUrl: "",
     name: "Jacob",
     house: "",
   }
@@ -38,7 +38,7 @@ function renderForm2Dom() {
     <!--FORM-->
 
     <label for="inputPassword5" class="form-label"> </label>
-    <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <input type="text" id="inputName" class="form-control" aria-describedby="passwordHelpBlock">
     <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
   </div>
 </div>
@@ -49,18 +49,48 @@ renderForm.innerHTML = domstring;
 const sortJsButton = document.querySelector ("#sortStudentButton")
 sortJsButton.addEventListener("click",sortStudents) 
 
+const inputName = document.querySelector ("#inputName")
+inputName.addEventListener("click",sortStudents)
+
 
 };
 
 
 
 function sortStudents() {
+  // this will hide the card renderForm.innerHTML = "";
+
+  /*const createStudent = (event) => {
+    event.preventDefault()
+  
+    //adding a new object from pet app
+    const newStudentObj = {
+      id: students.length + 1,
+      //imageUrl: document.querySelector("#petImage").value,
+      name: document.querySelector("#inputName").value,
+     // house: document.querySelector("#petColor").value,
+      //specialSkill: document.querySelector("#petSkills").value,
+      //type: document.querySelector("#petType").value,
+      
+  
+    };
+  
+    students.unshift(newStudentObj)
+    renderForm2Dom(students)
+    form.reset
+   };
+   //form.addEventListener('submit', createPet);*/
+  
+  
+
+
+  //This renders to array to dom not add a user
   let domString = ""
   // Loop over the array and create our pie cards
   students.forEach((student) => {
-      domString += `<div class="card">
+      domString += `<div class="card" id = "HouseCard" style="width: 18rem;">
       <div class="card-header">
-        Featured
+      ""
       </div>
       <div class="card-body">
       <img src=${student.imageUrl} class="img" alt=${student.id}>
