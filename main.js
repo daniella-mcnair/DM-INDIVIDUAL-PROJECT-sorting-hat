@@ -45,6 +45,7 @@ const inputName = document.querySelector ("#inputName")
 sortJsButton.addEventListener("click", addNewStudent);
 
 
+
 };
 
 
@@ -71,6 +72,10 @@ function sortStudents() {
  app.innerHTML = domString;
 
 
+expelButtonJs.addEventListener("click", expelStudent)
+const clearForm = document.querySelector ("#inputName")
+
+
 }
 
 function addNewStudent() {
@@ -95,16 +100,16 @@ function addNewStudent() {
   clearForm.reset
  
 //The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
-const expelButtonJs = document.querySelector (".expelButton")
-expelButtonJs.addEventListener("click", expelStudent)
-const clearForm = document.querySelector ("#inputName")
+
 
 };
 
-function expelStudent () {
+
+//Something in this is causing my form not to show
+const expelStudent = (event) => {
   if(event.target.id.includes("delete")){
     const[, id] = event.target.id.split("--")
-    const index = students.findIndex(obj => student.id === Number(id));
+    const index = students.findIndex(obj => obj.id === id);
     students.splice(index,1)
     sortStudents(students);
   }
