@@ -1,5 +1,7 @@
 const students = []
 
+const myFirstCard = document.querySelector("#firstCard")
+
 //This is the js variable to the html form
 const renderForm = document.querySelector("#showForm")
 //This is the js variable to the sort button on the html form
@@ -15,6 +17,7 @@ showCardJS.addEventListener("click",renderForm2Dom)
 
 
 function renderForm2Dom() {
+
   let domstring = "";
   domstring += `
   <div class="card" id = "HouseCard" style="width: 18rem;">
@@ -24,7 +27,7 @@ function renderForm2Dom() {
 
     <!--FORM-->
 
-    <label for="inputPassword5" class="form-label"> </label>
+    <label for="inputStudentName" class="form-label"> </label>
     <input type="text" id="inputName" class="form-control" aria-describedby="passwordHelpBlock">
     <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
   </div>
@@ -47,6 +50,8 @@ sortJsButton.addEventListener("click", addNewStudent);
 
 
 function sortStudents() {
+  //this removes my let's go button
+  showCardJS.innerHTML = ""
 
   //This renders to array to dom 
   let domString = ""
@@ -64,6 +69,8 @@ function sortStudents() {
   });
 
  app.innerHTML = domString;
+
+
 }
 
 function addNewStudent() {
@@ -74,7 +81,7 @@ function addNewStudent() {
   const RandomizeHouses = Math.floor(Math.random() * randomHouse.length);
   
   const house = randomHouse[RandomizeHouses]
-  
+  //this is like randomHouse[1] but RandomizeHouses creates a random set of index [1] in the previous ex is an index
 
   const newStudentObj = {
     id: students.length + 1,
@@ -85,34 +92,26 @@ function addNewStudent() {
 
   students.unshift(newStudentObj)
   sortStudents(students)
-  form.reset
+  clearForm.reset
  
-
+//The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
+const expelButtonJs = document.querySelector (".expelButton")
+expelButtonJs.addEventListener("click", expelStudent)
+const clearForm = document.querySelector ("#inputName")
 
 };
 
-/*
-//WORKING ON THIS ONE
-//function addStudent () {
-const nameInput = document.getElementById("inputName");
-//const houseInput = document.getElementById("studentHouse");
+function expelStudent () {
+  if(event.target.id.includes("delete")){
+    const[, id] = event.target.id.split("--")
+    const index = students.findIndex(obj => student.id === Number(id));
+    students.splice(index,1)
+    sortStudents(students);
+  }
 
-const newName = nameInput.value;
-//const newHouse = houseInput.value;
+  expelButtonJs.addEventListener("click", expelStudent)
+}
 
-const newStudent ={
-  id: students.length + 1,
-  imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
-  name: newName,
-  //house: newHouse,
-};
-students.push(newStudent);
-renderToDom();
-nameInput.value = "";
-//houseInput.value = "";/*
-
-  
-};/*
 
 /*
  PREVIOUS CODE ////
