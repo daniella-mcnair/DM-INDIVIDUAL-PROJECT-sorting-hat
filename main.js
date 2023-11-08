@@ -50,7 +50,9 @@ const sortJsButton = document.querySelector ("#sortStudentButton")
 sortJsButton.addEventListener("click",sortStudents) 
 
 const inputName = document.querySelector ("#inputName")
-inputName.addEventListener("click",sortStudents)
+//inputName.addEventListener("click",sortStudents)
+
+sortJsButton.addEventListener("click", addNewStudent);
 
 
 };
@@ -58,39 +60,12 @@ inputName.addEventListener("click",sortStudents)
 
 
 function sortStudents() {
-  // this will hide the card renderForm.innerHTML = "";
 
-  /*const createStudent = (event) => {
-    event.preventDefault()
-  
-    //adding a new object from pet app
-    const newStudentObj = {
-      id: students.length + 1,
-      //imageUrl: document.querySelector("#petImage").value,
-      name: document.querySelector("#inputName").value,
-     // house: document.querySelector("#petColor").value,
-      //specialSkill: document.querySelector("#petSkills").value,
-      //type: document.querySelector("#petType").value,
-      
-  
-    };
-  
-    students.unshift(newStudentObj)
-    renderForm2Dom(students)
-    form.reset
-   };
-   //form.addEventListener('submit', createPet);*/
-  
-  
-
-
-  //This renders to array to dom not add a user
+  //This renders to array to dom 
   let domString = ""
-  // Loop over the array and create our pie cards
   students.forEach((student) => {
       domString += `<div class="card" id = "HouseCard" style="width: 18rem;">
       <div class="card-header">
-      ""
       </div>
       <div class="card-body">
       <img src=${student.imageUrl} class="img" alt=${student.id}>
@@ -101,12 +76,46 @@ function sortStudents() {
     </div>`
   });
 
+ app.innerHTML = domString;
+}
+
+function addNewStudent() {
+  const newStudentObj = {
+    id: students.length + 1,
+    name: document.querySelector("#inputName").value,
+
+  };
+
+  students.unshift(newStudentObj)
+  sortStudents(students)
+  form.reset
  
 
 
-app.innerHTML = domString;
-  
 };
+
+/*
+//WORKING ON THIS ONE
+//function addStudent () {
+const nameInput = document.getElementById("inputName");
+//const houseInput = document.getElementById("studentHouse");
+
+const newName = nameInput.value;
+//const newHouse = houseInput.value;
+
+const newStudent ={
+  id: students.length + 1,
+  imageUrl: "https://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-8.jpg",
+  name: newName,
+  //house: newHouse,
+};
+students.push(newStudent);
+renderToDom();
+nameInput.value = "";
+//houseInput.value = "";/*
+
+  
+};/*
 
 /*
  PREVIOUS CODE ////
@@ -254,7 +263,7 @@ const filter () => {
   }*/
 
     
-/*function expelStudent (event) {
+/*function expelStudent (event) 
   const studentId = event.target.getAttribute("student.id");
 
   const expelledStudentIndex = students.findIndex((student) => student.id === parseInt(studentId));
@@ -267,14 +276,4 @@ const filter () => {
     renderExpelledStudents();
     console.log(renderExpelledStudents)
   }
-}*/
-
-
-
-//create divs for each box
-//put text etc in box
-//create card
-//you need an eventlistener to render form, function 
-//document.querySelector for the div id declare var in js
-//sortButton.addEventListener("click", expelStudent)
-//function to rendser fornm to dom {
+//}}*/
