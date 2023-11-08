@@ -1,17 +1,4 @@
-const students = [
-  {
-    id: 1,
-    imageUrl: "",
-    name: "Allie",
-    house: "",
-  }, 
-  {
-    id: 2,
-    imageUrl: "",
-    name: "Jacob",
-    house: "",
-  }
-]
+const students = []
 
 //This is the js variable to the html form
 const renderForm = document.querySelector("#showForm")
@@ -71,7 +58,7 @@ function sortStudents() {
       <img src=${student.imageUrl} class="img" alt=${student.id}>
         <h5 id="studentName">${student.name}</h5>
         <p id="studentHouse">${student.house}</p>
-        <a href="#" class="btn btn-primary" id="expelButton">Expel</a>
+        <a href="#" class="btn btn-primary expelButton" id="delete--${student.id}">Expel</a>
       </div>
     </div>`
   });
@@ -80,10 +67,20 @@ function sortStudents() {
 }
 
 function addNewStudent() {
+  const randomHouse = [
+    "Gryffindor", "Slytherin","Ravenclaw","Huffinpuff" 
+  ];
+  
+  const RandomizeHouses = Math.floor(Math.random() * randomHouse.length);
+  
+  const house = randomHouse[RandomizeHouses]
+  
+
   const newStudentObj = {
     id: students.length + 1,
     name: document.querySelector("#inputName").value,
-
+    //imageUrl: "http://dailynewsdig.com/wp-content/uploads/2014/03/Creative-And-Funny-Dog-Stock-Photography-Pictures-2.jpg"
+    house: house,
   };
 
   students.unshift(newStudentObj)
