@@ -13,6 +13,8 @@ const showCardJS = document.querySelector("#showCard")
 
 
 
+
+
 showCardJS.addEventListener("click",renderForm2Dom)
 
 
@@ -72,10 +74,11 @@ function sortStudents() {
  app.innerHTML = domString;
 
 
-expelButtonJs.addEventListener("click", expelStudent)
+
 const clearForm = document.querySelector ("#inputName")
 
-
+const expelButtonJs = document.querySelector(".expelButton")
+expelButtonJs.addEventListener("click", expelStudent)
 }
 
 function addNewStudent() {
@@ -101,7 +104,6 @@ function addNewStudent() {
  
 //The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
 
-
 };
 
 
@@ -114,7 +116,7 @@ const expelStudent = (event) => {
     sortStudents(students);
   }
 
-  expelButtonJs.addEventListener("click", expelStudent)
+
 }
 
 
