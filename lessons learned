@@ -1,0 +1,15 @@
+//I did not fully understand that Js cannot access a variable in html
+//document.query allows you to assign a new variable that connects to html however in js, you have to call the js variable not the original html
+
+//I did not understand the eventlistener syntax (jsvariable).addEvenlistener (event, function) and that if you use this way you have to call that function later
+
+//Did not fully understand that domstring and the app.innerHTML = domstring meant that whatever got added to domstring directly went to app in html becauses domstring. This was because i didnt understand point1 .
+
+
+//create divs for each box
+//put text etc in box
+//create card
+//you need an eventlistener to render form, function 
+//document.querySelector for the div id declare var in js
+//sortButton.addEventListener("click", expelStudent)
+//function to rendser fornm to dom

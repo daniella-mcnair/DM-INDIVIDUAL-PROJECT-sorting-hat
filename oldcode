@@ -1,0 +1,30 @@
+//This is the js variable to the html form
+const renderForm = document.querySelector("#showForm")
+
+//This is the js variable to select the "Let's Go" button
+const showCardJS = document.querySelector("#showCard")
+
+
+
+showCardJS.addEventListener("click",renderForm2Dom)
+
+function renderForm2Dom() {
+  let domstring = "";
+  domstring += `
+  <div class="card" id = "HouseCard" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Enter First Year's Name:</h5>
+    <h3>Student:</h3>
+
+    //FORM
+
+    <label for="inputPassword5" class="form-label">Password</label>
+    <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
+  </div>
+</div>
+  `
+renderForm.innerHTML = domstring;
+
+  
+};
