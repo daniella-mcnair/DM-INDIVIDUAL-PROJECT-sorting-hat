@@ -28,11 +28,13 @@ function renderForm2Dom() {
     <h3>Student:</h3>
 
     <!--FORM-->
+    <form>
 
     <label for="inputStudentName" class="form-label"> </label>
     <input type="text" id="inputName" class="form-control" aria-describedby="passwordHelpBlock">
-    <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
+    <button class="btn btn-primary" id="sortStudentButton">Sort!</button>
   </div>
+  </form>
 </div>
 
 <div id = "filters">
@@ -47,10 +49,10 @@ renderForm.innerHTML = domstring;
 
 //The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
 const sortJsButton = document.querySelector ("#sortStudentButton")
-sortJsButton.addEventListener("click",sortStudents) 
+//sortJsButton.addEventListener("click",sortStudents) 
 
 const inputName = document.querySelector ("#inputName")
-inputName.addEventListener("click",sortStudents)
+//inputName.addEventListener("click",sortStudents)
 
 
 
@@ -77,7 +79,7 @@ function sortStudents() {
       <img src=${student.imageUrl} class="img" alt=${student.id}>
         <h5 id="studentName">${student.name}</h5>
         <p id="studentHouse">${student.house}</p>
-        <a href="#" class="btn btn-primary expelButton" id="delete--${student.id}">Expel</a>
+        <button class="btn btn-primary expelButton" id="delete--${student.id}">Expel</button>
       </div>
     </div>
     
@@ -87,8 +89,12 @@ function sortStudents() {
 
  app.innerHTML = domString;
 
- const expelButtonJs = document.querySelector(".expelButton")
-expelButtonJs.addEventListener("click", expelStudent)
+  const expelButtonJs = document.querySelector(".expelButton")
+  console.log(expelButtonJs)
+
+  expelButtonJs.addEventListener("click", expelStudent)
+
+  
 
 
 
@@ -124,7 +130,6 @@ function addNewStudent() {
 //The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
 
 };
-
 
 
 const expelStudent = (event) => {
