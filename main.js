@@ -50,7 +50,9 @@ const sortJsButton = document.querySelector ("#sortStudentButton")
 sortJsButton.addEventListener("click",sortStudents) 
 
 const inputName = document.querySelector ("#inputName")
-//inputName.addEventListener("click",sortStudents)
+inputName.addEventListener("click",sortStudents)
+
+
 
 sortJsButton.addEventListener("click", addNewStudent);
 
@@ -80,19 +82,25 @@ function sortStudents() {
     </div>
     
     `
+    
   });
 
  app.innerHTML = domString;
 
-
-
-const clearForm = document.querySelector ("#inputName")
-
-const expelButtonJs = document.querySelector(".expelButton")
+ const expelButtonJs = document.querySelector(".expelButton")
 expelButtonJs.addEventListener("click", expelStudent)
+
+
+
+
+
+
 }
 
 function addNewStudent() {
+
+  const clearForm = document.querySelector ("#inputName")
+
   const randomHouse = [
     "Gryffindor", "Slytherin","Ravenclaw","Huffinpuff" 
   ];
