@@ -34,6 +34,14 @@ function renderForm2Dom() {
     <a href="#" class="btn btn-primary" id="sortStudentButton">Sort!</a>
   </div>
 </div>
+
+<div id = "filters">
+<button type="button" id="catB" class="btn btn-primary">Gryffindor</button>
+<button type="button" id="dog" class="btn btn-secondary">Slytherin</button>
+<button type="button" id="dino" class="btn btn-success">Hufflepuff</button>
+<button type="button" id="all" class="btn btn-danger">Ravenclaw</button></div>
+
+
   `
 renderForm.innerHTML = domstring;
 
@@ -59,7 +67,8 @@ function sortStudents() {
   //This renders to array to dom 
   let domString = ""
   students.forEach((student) => {
-      domString += `<div class="card" id = "HouseCard" style="width: 18rem;">
+      domString += `
+      <div class="card" id = "HouseCard" style="width: 18rem;">
       <div class="card-header">
       </div>
       <div class="card-body">
@@ -68,7 +77,9 @@ function sortStudents() {
         <p id="studentHouse">${student.house}</p>
         <a href="#" class="btn btn-primary expelButton" id="delete--${student.id}">Expel</a>
       </div>
-    </div>`
+    </div>
+    
+    `
   });
 
  app.innerHTML = domString;
@@ -107,7 +118,7 @@ function addNewStudent() {
 };
 
 
-//Something in this is causing my form not to show
+
 const expelStudent = (event) => {
   if(event.target.id.includes("delete")){
     const[, id] = event.target.id.split("--")
@@ -118,4 +129,3 @@ const expelStudent = (event) => {
 
 
 }
-
