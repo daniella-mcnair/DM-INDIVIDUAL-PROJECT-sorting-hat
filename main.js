@@ -1,5 +1,7 @@
 const students = []
 
+const expelledStudents = []
+
 const myFirstCard = document.querySelector("#firstCard")
 
 //This is the js variable to the html form
@@ -9,6 +11,8 @@ const renderForm = document.querySelector("#showForm")
 
 //This is the js variable to select the "Let's Go" button in html
 const showCardJS = document.querySelector("#showCard")
+
+const teamMoldyArray = document.querySelector("#app2")
 
 
 
@@ -49,6 +53,8 @@ renderForm.innerHTML = domstring;
 
 //The stuff below doesn't show on the dom until this function is rendered so it needs to be here or else it can't find the id because it's doesn't show yet)
 const sortJsButton = document.querySelector ("#sortStudentButton")
+
+//Do not need this one beow
 //sortJsButton.addEventListener("click",sortStudents) 
 
 const inputName = document.querySelector ("#inputName")
@@ -136,9 +142,30 @@ const expelStudent = (event) => {
   if(event.target.id.includes("delete")){
     const[, id] = event.target.id.split("--")
     const index = students.findIndex(obj => obj.id === id);
-    students.splice(index,1)
+    expelledStudents.push(students.splice(index,1))
     sortStudents(students);
+
+  
+    renderToTeamMoldy(expelledStudents)
+
   }
 
 
 }
+
+const renderToTeamMoldy = (array) => {
+
+  const expelledStudentDomstring = expelledStudents.map(expelledStudent =>{
+    return `<div class="card" id = "HouseCard" style="width: 18rem;">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+    <img src="" class="img" alt="">
+      <p id="studentHouse">Unfortunately, ${expelledStudent.name} has gone over to the dark side :(</p>
+    </div>
+  </div>`
+  })
+  teamMoldyArray.innerHTML = expelledStudentDomstring
+}
+
+console.log(renderToTeamMoldy(expelledStudents))
