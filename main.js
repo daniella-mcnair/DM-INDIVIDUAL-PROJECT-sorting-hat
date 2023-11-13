@@ -153,10 +153,11 @@ const expelStudent = (event) => {
 
 }
 
-const renderToTeamMoldy = (array) => {
-
-  const expelledStudentDomstring = expelledStudents.map(expelledStudent =>{
-    return `<div class="card" id = "HouseCard" style="width: 18rem;">
+function renderToTeamMoldy() {
+  let domstring = ""
+  expelledStudents.forEach((expelledStudent) => {
+  domstring =+
+    `<div class="card" id = "HouseCard" style="width: 18rem;">
     <div class="card-header">
     </div>
     <div class="card-body">
@@ -165,7 +166,5 @@ const renderToTeamMoldy = (array) => {
     </div>
   </div>`
   })
-  teamMoldyArray.innerHTML = expelledStudentDomstring
+  teamMoldyArray.innerHTML = domstring
 }
-
-console.log(renderToTeamMoldy(expelledStudents))

@@ -23,3 +23,20 @@ const expelStudent = (event) => {
   const removedStudent = students.splice(index, 1)[0];
   expelledStudents.push(removedStudent)
 }
+
+
+const renderToTeamMoldy = (array) => {
+  expelledStudents.forEach((expelledStudent) => {
+  let domstring = ""
+  domstring =+
+    `<div class="card" id = "HouseCard" style="width: 18rem;">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+    <img src="" class="img" alt="">
+      <p id="studentHouse">Unfortunately, ${expelledStudent.name} has gone over to the dark side :(</p>
+    </div>
+  </div>`
+  })
+  teamMoldyArray.innerHTML = domstring
+}
